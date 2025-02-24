@@ -1,17 +1,19 @@
-/* Import Google Font */
+/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
-/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('assets/background.jpg') no-repeat center center fixed;
+    background-image: url('images/Opera Snapshot_2025-02-22_151859_looka.com.png'); /* Correct Path */
     background-size: cover;
-    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Needed for background to fill viewport */
+    color: #333; /* Default text color for better contrast */
 }
 
-/* Transparent Background Overlay */
+/* Transparent Background Overlay (if needed) */
 body::before {
     content: "";
     position: absolute;
@@ -19,11 +21,10 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    z-index: -1; /* Place behind the content */
 }
 
-/* Header */
 header {
     text-align: center;
     background: rgba(255, 255, 255, 0.9);
@@ -39,7 +40,6 @@ header p {
     color: #666;
 }
 
-/* Navigation Bar */
 nav {
     background: #003366;
     text-align: center;
@@ -62,7 +62,6 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Content Sections */
 .content {
     text-align: center;
     padding: 40px 20px;
@@ -73,10 +72,11 @@ nav ul li a {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
 footer {
     text-align: center;
     background: #003366;
     color: white;
     padding: 10px;
+    position: relative; /* Needed for proper positioning if overlay is used */
+    z-index: 1; /* Ensure footer is above the overlay */
 }
